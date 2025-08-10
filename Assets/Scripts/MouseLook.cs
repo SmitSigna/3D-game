@@ -3,15 +3,15 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
     public float mouseSensitivity = 100f;
-    public Transform playerBody; // The player’s body (rotates horizontally)
-    public Transform playerCamera; // The camera (rotates vertically)
+    public Transform playerBody; 
+    public Transform playerCamera; 
 
     float xRotation = 0f;
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked; // Lock cursor to center
-        Cursor.visible = false; // Hide cursor
+        Cursor.lockState = CursorLockMode.Locked; 
+        Cursor.visible = false;
     }
 
     void Update()
