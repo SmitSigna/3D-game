@@ -10,7 +10,9 @@ public class EnemyAI : MonoBehaviour
 
     public LayerMask whatIsGround, whatIsPlayer;
 
-    Animator anim;
+    private Animator anim;
+
+
 
     //Patroling
     public Vector3 walkPoint;
@@ -30,6 +32,7 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.Find("FPS Player").transform;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+
     }
 
     void Update()
@@ -70,6 +73,7 @@ public class EnemyAI : MonoBehaviour
             agent.SetDestination(walkPoint);
         }
 
+
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //Walk poin reached
@@ -98,7 +102,6 @@ public class EnemyAI : MonoBehaviour
         anim.SetBool("isWalking", false);
         anim.SetBool("isRunning", true);
         anim.SetBool("isAttacking", false);
-
 
         agent.SetDestination(player.position);
     }
