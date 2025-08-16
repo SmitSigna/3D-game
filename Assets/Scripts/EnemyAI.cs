@@ -103,6 +103,8 @@ public class EnemyAI : MonoBehaviour
         anim.SetBool("isRunning", true);
         anim.SetBool("isAttacking", false);
 
+
+
         agent.SetDestination(player.position);
     }
     private void AttackPlayer()
