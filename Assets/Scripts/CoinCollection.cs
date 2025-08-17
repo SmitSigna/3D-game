@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CoinCollection : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class CoinCollection : MonoBehaviour
             coinText.text = "Coin: " + Coin.ToString() + "/25";
             // Debug.Log(Coin);
             Destroy(other.gameObject);
+        }
+        if (Coin == 25)
+        {
+            int currentScene = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentScene);
         }
     }
 }

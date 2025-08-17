@@ -122,7 +122,7 @@ public class EnemyAI : MonoBehaviour
         if (!alreadyAttacked)
         {
             //Attack code here
-            player.GetComponent<Target>().TakeDamage(attackDamage);
+            player.GetComponent<Attributes>().TakeDamage(attackDamage);
 
             //
             alreadyAttacked = true;
