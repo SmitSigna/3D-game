@@ -22,6 +22,7 @@ public class EnemyAI : MonoBehaviour
     //Attacking
     public float timeBetweenAttacks;
     bool alreadyAttacked;
+    public int attackDamage = 5;
 
     //States
     public float sightRange, attackRange;
@@ -121,7 +122,7 @@ public class EnemyAI : MonoBehaviour
         if (!alreadyAttacked)
         {
             //Attack code here
-
+            player.GetComponent<Target>().TakeDamage(attackDamage);
 
             //
             alreadyAttacked = true;
