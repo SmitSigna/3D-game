@@ -8,6 +8,8 @@ public class Guns : MonoBehaviour
     [SerializeField] float range = 100f;
     [SerializeField] float fireRate = 30f;
     [SerializeField] Camera fpsCam;
+
+    [SerializeField] ParticleSystem muzzleFlash;
     private float nextTimeToFire = 0f;
 
     void Update()
@@ -21,6 +23,7 @@ public class Guns : MonoBehaviour
 
     void Shoot()
     {
+        muzzleFlash.Play();
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
